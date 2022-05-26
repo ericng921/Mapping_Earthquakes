@@ -3,7 +3,7 @@ console.log("working");
 
 
 // Accessing the airport GeoJSON URL
-let airportData = "https://raw.githubusercontent.com/ericng921/Mapping_Earthquakes/Mapping_GeoJSON_Points/majorAirports.json"
+let torontoData = "https://raw.githubusercontent.com/ericng921/Mapping_Earthquakes/Mapping_GeoJSON_Linestrings/torontoRoutes.json"
 
 
 // We create the tile layer that will be the background of our map.
@@ -29,7 +29,6 @@ let baseMaps = {
   Dark: dark
 };
 
-
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
   center: [30, 30],
@@ -37,14 +36,23 @@ let map = L.map('mapid', {
   layers: [streets]
 })
 
-
-
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 
+// Create a style for the lines.
+let myStyle = {
+  color: "#ffffa1",
+  weight: 2
+}
+
 // Grabbing our GeoJSON data.
-d3.json(airportData).then(function(data) {
+d3.json(torontoData).then(function(data) {
   console.log(data);
 // Creating a GeoJSON layer with the retrieved data.
-L.geoJSON(data).addTo(map);
+L.geoJSON(data, {
+  style: myStyle,
+  onEachFeature: function(feature, layer) {
+  layer.bindPopup("<h3> Airline: " + feature.properties.airline + "</h3> <hr><h3> Destination:" + feature.properties.dst +"</h3>");
+  }
+}).addTo(map);
 });
