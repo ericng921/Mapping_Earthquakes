@@ -185,22 +185,6 @@ d3.json(majorjson).then(function(data) {
   // 9. Close the braces and parentheses for the major earthquake data.
   });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // Here we create a legend control object.
 let legend = L.control({
   position: "bottomright"
