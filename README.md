@@ -15,18 +15,18 @@ Software: Visual Studio Code 1.67.2, Leaflet 1.8, HTML/CSS, JavaScript
 ## Result
 
 
-
+![boundary](https://user-images.githubusercontent.com/100378319/170795827-efcab03c-4527-4a54-9dcc-f084e7fcf7ec.png)
 
 As picture shown above, it is the street view with 3 layers
 
 
 
-
+![sat](https://user-images.githubusercontent.com/100378319/170795832-02ede1bf-9004-444b-ace8-ca9955f27480.png)
 
 As picture shown above, it is the Satellite view with 3 layers
 
 
 
-
+![dark](https://user-images.githubusercontent.com/100378319/170795838-ac3cf288-c683-4e85-9f4f-527dbd25b14a.png)
 
 As picture shown above, it is the dark view with 3 layers
